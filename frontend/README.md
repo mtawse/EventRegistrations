@@ -3,8 +3,7 @@
 ## Installation
 
 ```
-npm install
-npm run dev
+./install_and_run.sh
 ```
 
 Navigate to http://localhost:3000

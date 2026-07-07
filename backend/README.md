@@ -3,12 +3,12 @@
 ## Installation
 
 ```
-composer install
-composer run dev
+./install_and_run.sh
 ```
 
 ## Features:
 
+* Local SQLite DB
 * Seeds to populate Events
 * CORS rule on `/api` routes
 

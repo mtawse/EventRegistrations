@@ -6,8 +6,17 @@ Frontend UI in NextJS
 
 ## Installation
 
+**Backend**
+
 ```
-./install_and_run.sh
+./backend/install_and_run.sh
+```
+
+Open a new terminal
+
+**Frontend**
+```
+./frontend/install_and_run.sh
 ```
 
 Navigate to http://localhost:3000
