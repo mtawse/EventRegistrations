@@ -9,14 +9,16 @@ Frontend UI in NextJS
 **Backend**
 
 ```
-./backend/install_and_run.sh
+cd backend
+./install_and_run.sh
 ```
 
 Open a new terminal
 
 **Frontend**
 ```
-./frontend/install_and_run.sh
+cd frontend
+./install_and_run.sh
 ```
 
 Navigate to http://localhost:3000
