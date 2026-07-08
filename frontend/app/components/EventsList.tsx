@@ -6,7 +6,7 @@ import { EventModel } from "../types";
 
 export default function EventsList() {
 
-  const EVENTS_URL = 'http://localhost:8000/api/events';
+  const EVENTS_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/events`;
 
   const [events, setEvents] = useState<EventModel[]>([]);
   const [loadingEventsError, setLoadingEventsError] = useState<string | null>(null);
