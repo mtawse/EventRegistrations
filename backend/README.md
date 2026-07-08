@@ -31,5 +31,5 @@ POST /api/events/:id/register
 
 Unregister user
 ```
-POST /api/events/:id/register
+POST /api/events/:id/unregister
 ```
