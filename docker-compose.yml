@@ -1,0 +1,59 @@
+services:
+  ui:
+    build:
+      context: ./frontend
+    container_name: events-ui
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    networks:
+      - app-network
+  api:
+    build:
+      context: ./backend
+    container_name: events-api
+    volumes:
+      - ./backend:/var/www
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=events
+      - DB_USERNAME=root
+      - DB_PASSWORD=Password123!
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-server
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend:/var/www
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - app-network
+    depends_on:
+      - api
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: events
+      MYSQL_ROOT_PASSWORD: Password123!
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

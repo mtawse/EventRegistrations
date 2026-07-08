@@ -10,6 +10,14 @@ Frontend UI in NextJS
 
 ## Installation
 
+Run in Docker with MySql (recommended)
+
+```
+docker compose up
+```
+
+Or run services natively
+
 **Backend**
 
 ```
