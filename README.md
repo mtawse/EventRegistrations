@@ -1,5 +1,9 @@
 # HDR UK Events List
 
+Used to track number of user registrations at events
+
+![Events List](./images/events-list.png)
+
 Backend API in Laravel
 
 Frontend UI in NextJS
